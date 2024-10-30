@@ -29,7 +29,7 @@ const SignUp = () => {
       return handleError("error required all field");
     }
     try {
-      const url = "http://localhost:8080/user/signup";
+      const url = "https://authentication-project-lake.vercel.app/user/signup";
       const response = await fetch(url, {
         method: "POST",
         headers: {
