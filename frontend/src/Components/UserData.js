@@ -64,7 +64,7 @@ const UserData = () => {
       return handleError("required all fileds");
     }
     try {
-      const url = "http://localhost:8080/user/userdata";
+      const url = "https://authentication-project-lake.vercel.app/user/userdata";
       const response = await fetch(url, {
         method: "POST",
         headers: {
