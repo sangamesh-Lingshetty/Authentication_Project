@@ -3,6 +3,13 @@ import {
   Users,
   BookOpen,
   Mail,
+  Github, 
+  Linkedin, 
+  Twitter, 
+  Instagram,
+  Facebook,
+  MessageCircle,
+  Slack,
   Phone,
   MapPin,
   ChevronRight,
@@ -41,8 +48,49 @@ const Landingpage = () => {
     }else{
         handleError("Pls Login into Socio.")
     }
-   
   };
+
+  const hadleSuccessSignup = () => {
+    setSignUpBtn(false);
+    // setGreeting(true);
+  };
+
+  const hadleSuccessLogin = () => {
+    setLoginBtn(false);
+    setGreeting(true);
+  };
+
+  // Team Members Data
+  const teamMembers = [
+    {
+      name: "Yashwanth G M",
+      role: "CEO of Socio",
+      description:
+        "As the CEO of Socio,yashwanth drives the vision and strategic direction of the organization, empowering individuals through innovative educational resources and fostering a collaborative learning environment. With a passion for lifelong learning and operational excellence, he is committed to making quality education accessible to all.",
+      image: "/yash.jpg",
+    },
+    {
+      name: "Rakesh Gowda",
+      role: "Founder of Socio",
+      description:
+        "As the Founder of Socio, Rakesh Gowdra established the organization with a vision to transform education through innovative technology and collaborative learning. [His/Her/Their] passion for empowering individuals and commitment to accessibility have laid the foundation for a vibrant community dedicated to lifelong learning and personal growth.",
+      image: "/rakesh.jpg",
+    },
+    {
+      name: "Md Arif",
+      role: "CTO of Socio",
+      description:
+        "As the CTO of Socio, Md Arif is responsible for overseeing the technological strategy and development of innovative educational solutions. With a strong focus on leveraging cutting-edge technology, [he/she/they] drives the implementation of scalable systems and ensures that Socio remains at the forefront of the digital learning landscape.",
+      image: "/arif.jpg",
+    },
+    {
+      name: "Sangamesh",
+      role: "Developer",
+      description:
+        "As a Developer at Socio, Sangamesha is responsible for creating and maintaining innovative educational applications that enhance user experience. [He/She/They] collaborates with teams to implement cutting-edge solutions, driving the mission of making learning accessible and engaging for all.",
+      image: "/sangu.jpg",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
@@ -218,6 +266,34 @@ const Landingpage = () => {
         </div>
       </section>
 
+ {/* Team Section - New Addition */}
+      <section id="team" className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">
+            Our Team
+          </h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 rounded-xl p-6 text-center hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-cyan-400"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                />
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {member.name}
+                </h3>
+                <p className="text-cyan-400 mb-3">{member.role}</p>
+                <p className="text-gray-300 text-sm">{member.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -230,26 +306,33 @@ const Landingpage = () => {
                 <Mail className="h-6 w-6 text-cyan-400" />
                 <div>
                   <h3 className="text-white font-semibold">Email Us</h3>
-                  <p className="text-gray-300">support@socio.edu</p>
+                  <p className="text-gray-300">sociosocialconnect@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="h-6 w-6 text-cyan-400" />
                 <div>
                   <h3 className="text-white font-semibold">Call Us</h3>
-                  <p className="text-gray-300">+1 (555) 123-4567</p>
+                  <p className="text-gray-300">91+ 8495074227</p>
                 </div>
               </div>
+
+              
+
               <div className="flex items-center gap-4">
                 <MapPin className="h-6 w-6 text-cyan-400" />
                 <div>
                   <h3 className="text-white font-semibold">Visit Us</h3>
                   <p className="text-gray-300">
-                    123 Education Street, Learning City
+                    Banashankari,bangalore,karnataka
                   </p>
                 </div>
               </div>
+
+
             </div>
+
+            
             <form className="space-y-6">
               <input
                 type="text"
@@ -274,50 +357,103 @@ const Landingpage = () => {
         </div>
       </section>
 
-      {/* Footer */}
+       {/* Footer */}
       <footer className="bg-gray-900 py-12 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Platform</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="hover:text-cyan-400 cursor-pointer">Features</li>
-                <li className="hover:text-cyan-400 cursor-pointer">Pricing</li>
-                <li className="hover:text-cyan-400 cursor-pointer">Support</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="hover:text-cyan-400 cursor-pointer">About Us</li>
-                <li className="hover:text-cyan-400 cursor-pointer">Careers</li>
-                <li className="hover:text-cyan-400 cursor-pointer">Blog</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Legal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="hover:text-cyan-400 cursor-pointer">Privacy</li>
-                <li className="hover:text-cyan-400 cursor-pointer">Terms</li>
-                <li className="hover:text-cyan-400 cursor-pointer">
-                  Copyright
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Connect</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li className="hover:text-cyan-400 cursor-pointer">Twitter</li>
-                <li className="hover:text-cyan-400 cursor-pointer">LinkedIn</li>
-                <li className="hover:text-cyan-400 cursor-pointer">Facebook</li>
-              </ul>
-            </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-4 gap-8">
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Platform</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li className="hover:text-cyan-400 cursor-pointer">Features</li>
+              <li className="hover:text-cyan-400 cursor-pointer">Pricing</li>
+              <li className="hover:text-cyan-400 cursor-pointer">Support</li>
+            </ul>
           </div>
-          <div className="mt-12 text-center text-gray-400">
-            <p>© 2024 Socio. All rights reserved.</p>
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Company</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li className="hover:text-cyan-400 cursor-pointer">About Us</li>
+              <li className="hover:text-cyan-400 cursor-pointer">Careers</li>
+              <li className="hover:text-cyan-400 cursor-pointer">Blog</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Legal</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li className="hover:text-cyan-400 cursor-pointer">Privacy</li>
+              <li className="hover:text-cyan-400 cursor-pointer">Terms</li>
+              <li className="hover:text-cyan-400 cursor-pointer">Copyright</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Connect</h4>
+            <div className="flex gap-4 text-gray-400">
+              <a 
+                href="https://x.com/Socio8892768421" 
+                className="hover:text-cyan-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/socio-connect-0751ba336/" 
+                className="hover:text-cyan-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.facebook.com/socio.484907/map" 
+                className="hover:text-cyan-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.instagram.com/socio.slc/profilecard/?igsh=bXJ6ZmFhZWg0MzN3" 
+                className="hover:text-cyan-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://github.com/yourusername" 
+                className="hover:text-cyan-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://app.slack.com/client/T07U9V01H1T/C07UA03QESZ" 
+                className="hover:text-cyan-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Slack className="h-5 w-5" />
+              </a>
+
+              <a 
+                href="https://whatsapp.com/channel/0029VaPn3Wr7dmeePYMFBT3i" 
+                className="hover:text-cyan-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </a>
+
+            </div>
           </div>
         </div>
-      </footer>
+        <div className="mt-12 text-center text-gray-400">
+          <p>© 2024 Socio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
       {/* login model */}
       <Modal show={loginBtn} onHide={() => setLoginBtn(false)}>
@@ -329,6 +465,34 @@ const Landingpage = () => {
           <Login />
         </Modal.Body>
       </Modal>
+
+ {/* Greeting Modal for Successful Registration */}
+      <Modal show={greeting} onHide={() => setGreeting(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Welcome to Socio!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-cyan-400 mb-4">
+              Thank You for Registering
+            </h3>
+            <p className="text-gray-700 mb-4">
+              We're excited to have you join the Socio community! Our team will
+              review your registration and get back to you soon.
+            </p>
+            <p className="text-sm text-gray-500">
+              In the meantime, explore our platform and get ready for an amazing
+              learning journey.
+            </p>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setGreeting(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
 
       {/* signUp model */}
       <Modal show={signUpBtn} onHide={() => setSignUpBtn(false)}>
