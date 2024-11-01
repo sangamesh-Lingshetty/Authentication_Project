@@ -53,11 +53,7 @@ const SignUp = () => {
         handleError(detail);
       } else{
         handleError(message);
-        setTimeout(()=>{
-          navigate('/login');
-        },2500);
       }
-      console.log(result);
     } catch (err) {
       handleError(err);
     }
@@ -104,7 +100,7 @@ const SignUp = () => {
           </div>
           <div class="mb-3">
             <label htmlFor="password" className="form-label">
-              Password
+              Set Password
             </label>
             <input
               type="password"
