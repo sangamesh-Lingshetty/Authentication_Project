@@ -97,315 +97,255 @@ const UserData = () => {
 
   return (
     <>
-      <div>
-        <h1 style={{ textAlign: "center", marginTop: "20px", color: "#333" }}>
-          Complete the Steps...
-        </h1>
-        <form onSubmit={handleSubmit}>
-          <div className="container" style={{ width: "45%" }}>
-            <h4>Personal infomations.</h4>
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                Fullname <span className="required-star">*</span>
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="fullname"
-                value={userdata.fullname}
-                name="fullname"
-                placeholder="Enter your name"
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                email <span className="required-star">*</span>
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                value={userdata.email}
-                name="email"
-                placeholder="Enter your email"
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                phoneNumber <span className="required-star">*</span>
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="number"
-                value={userdata.phoneNumber}
-                name="phoneNumber"
-                placeholder="Enter your number"
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="gender" className="form-label">
-                Gender <span className="required-star">*</span>
-              </label>
-              <select
-                className="form-control"
-                id="gender"
-                value={userdata.gender}
-                name="gender"
-                onChange={handleUserInput} // Apply the handleUserInput function
-                required
-              >
-                <option value="">Select Gender</option>
-                {/* Optional default option */}
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                age <span className="required-star">*</span>
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="age"
-                value={userdata.age}
-                name="age"
-                placeholder="Enter your age"
-                //   value={}
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                address (optional)
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="address"
-                value={userdata.address}
-                name="address"
-                placeholder="Enter your address"
-                onChange={handleUserInput}
-              />
-            </div>
-
-            <h4>Collage infomations.</h4>
-
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                collage/university <span className="required-star">*</span>
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="clgname"
-                placeholder="Enter your university name"
-                value={userdata.collegeName}
-                name="collegeName"
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                currentEducation <span className="required-star">*</span>
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="currentEducation"
-                value={userdata.currentEducation}
-                name="currentEducation"
-                placeholder="Ex:BE,B-Tech,BCA ect."
-                //   value={}
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                stream/branch <span className="required-star">*</span>
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="branch"
-                value={userdata.stream}
-                name="stream"
-                placeholder="Ex:CSE,ECE,MECH ect"
-                //   value={}
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="graduationYear" className="form-label">
-                Graduation Year <span className="required-star">*</span>
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="graduationYear"
-                value={userdata.graduationYear}
-                name="graduationYear"
-                placeholder="Enter your graduation year"
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="internships" className="form-label">
-                Internships
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="internships"
-                // value={userdata.internships ? userdata.internships.join(', ') : ''}
-                value={userdata.internships}
-                name="internships"
-                placeholder="Enter internships (comma-separated)"
-                onChange={handleUserInput}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="internships" className="form-label">
-                certifications
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="certifications"
-                // value={userdata.certifications ? userdata.certifications.join(', ') : ''}
-                value={userdata.certifications}
-                name="certifications"
-                placeholder="Enter internships (comma-separated)"
-                onChange={handleUserInput}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="technicalSkills" className="form-label">
-                Technical Skills <span className="required-star">*</span>
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="technicalSkills"
-                // value={userdata.technicalSkills ? userdata.technicalSkills.join(', ') : ''}
-                value={userdata.technicalSkills}
-                name="technicalSkills"
-                placeholder="Enter technical skills (comma-separated)"
-                onChange={handleUserInput}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="softSkills" className="form-label">
-                Soft Skills
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                // value={userdata.softSkills ? userdata.softSkills.join(', ') : ''}
-                value={userdata.softSkills}
-                name="softSkills"
-                id="softSkills"
-                placeholder="Enter soft skills (comma-separated)"
-                onChange={handleUserInput}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="languages" className="form-label">
-                Languages
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="languages"
-                value={userdata.languages}
-                name="languages"
-                placeholder="Enter languages (comma-separated)"
-                onChange={handleUserInput}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="portfolio" className="form-label">
-                Portfolio
-              </label>
-              <input
-                type="url"
-                className="form-control"
-                id="portfolio"
-                value={userdata.portfolio}
-                name="portfolio"
-                placeholder="Enter your portfolio URL"
-                onChange={handleUserInput}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="linkedInProfile" className="form-label">
-                LinkedIn Profile <span className="required-star">*</span>
-              </label>
-              <input
-                type="url"
-                className="form-control"
-                id="linkedInProfile"
-                value={userdata.linkedInProfile}
-                name="linkedInProfile"
-                onChange={handleUserInput}
-                placeholder="Enter your LinkedIn profile URL"
-                // required
-              />
-            </div>
-
-
-            <div className="form-group">
-              <label htmlFor="linkedInProfile" className="form-label">
-                Resume <span className="required-star">*</span>
-              </label>
-              <input
-                type="file"
-                className="form-control"
-                id="resume"
-                value={userdata.resume}
-                name="resume"
-                onChange={handleUserInput}
-                placeholder="Upload your resume"
-              />
-            </div>
-
-
-            <button type="submit" className="btn btn-primary btn-block">
-              Submit
-            </button>
+      <div className="container mt-5">
+      <ToastContainer />
+      <h1 className="text-center mb-4">Complete the Steps...</h1>
+      <form onSubmit={handleSubmit}>
+        {/* Personal Information Section */}
+        <div className="card p-4 mb-4">
+          <h4 className="card-title">Personal Information</h4>
+          <div className="form-group">
+            <label>Full Name *</label>
+            <input
+              type="text"
+              className="form-control"
+              name="fullname"
+              value={userdata.fullname}
+              placeholder="Enter your full name"
+              onChange={handleUserInput}
+              required
+            />
           </div>
-        </form>
-      </div>
+          <div className="form-group">
+            <label>Email *</label>
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              value={userdata.email}
+              placeholder="Enter your email"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Phone Number *</label>
+            <input
+              type="text"
+              className="form-control"
+              name="phoneNumber"
+              value={userdata.phoneNumber}
+              placeholder="Enter your phone number"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Gender *</label>
+            <select
+              className="form-control"
+              name="gender"
+              value={userdata.gender}
+              onChange={handleUserInput}
+              required
+            >
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label>Age *</label>
+            <input
+              type="number"
+              className="form-control"
+              name="age"
+              value={userdata.age}
+              placeholder="Enter your age"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+        </div>
+
+        {/* College Information Section */}
+        <div className="card p-4 mb-4">
+          <h4 className="card-title">College Information</h4>
+          <div className="form-group">
+            <label>College/University Name *</label>
+            <input
+              type="text"
+              className="form-control"
+              name="collegeName"
+              value={userdata.collegeName}
+              placeholder="Enter your college or university name"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Current Education *</label>
+            <input
+              type="text"
+              className="form-control"
+              name="currentEducation"
+              value={userdata.currentEducation}
+              placeholder="e.g., BE, B-Tech, BCA"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Stream/Branch *</label>
+            <input
+              type="text"
+              className="form-control"
+              name="stream"
+              value={userdata.stream}
+              placeholder="e.g., CSE, ECE, MECH"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Graduation Year *</label>
+            <input
+              type="number"
+              className="form-control"
+              name="graduationYear"
+              value={userdata.graduationYear}
+              placeholder="Enter your graduation year"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="card p-4 mb-4">
+          <h4 className="card-title">Skills and Experience</h4>
+          <div className="form-group">
+            <label>Technical Skills/(N/A) *</label>
+            <input
+              type="text"
+              className="form-control"
+              name="technicalSkills"
+              value={userdata.technicalSkills}
+              placeholder="Enter technical skills (comma-separated)"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Internships /(N/A)</label>
+            <input
+              type="text"
+              className="form-control"
+              name="internships"
+              value={userdata.internships}
+              placeholder="Enter internships (comma-separated)"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Certifications /(N/A)</label>
+            <input
+              type="text"
+              className="form-control"
+              name="certifications"
+              value={userdata.certifications}
+              placeholder="Enter certifications (comma-separated)"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Soft Skills /(N/A)</label>
+            <input
+              type="text"
+              className="form-control"
+              name="softSkills"
+              value={userdata.softSkills}
+              placeholder="Enter soft skills (comma-separated)"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+        </div>
+
+        <div className="card p-4 mb-4">
+          <h4 className="card-title">Skills and Experience</h4>
+          <div className="form-group">
+            <label htmlFor="languages" className="form-label">
+              Languages /(N/A)
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="languages"
+              value={userdata.languages}
+              name="languages"
+              placeholder="Enter languages (comma-separated)"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="portfolio" className="form-label">
+              Portfolio /(N/A)
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="portfolio"
+              value={userdata.portfolio}
+              name="portfolio"
+              placeholder="Enter your portfolio URL"
+              onChange={handleUserInput}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="linkedInProfile" className="form-label">
+              LinkedIn Profile /(N/A) <span className="required-star">*</span>
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="linkedInProfile"
+              value={userdata.linkedInProfile}
+              name="linkedInProfile"
+              onChange={handleUserInput}
+              placeholder="Enter your LinkedIn profile URL"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="linkedInProfile" className="form-label">
+              Resume /(N/A) <span className="required-star">*</span>
+            </label>
+            <input
+              type="file"
+              className="form-control"
+              id="resume"
+              value={userdata.resume}
+              name="resume"
+              onChange={handleUserInput}
+              placeholder="Upload your resume"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit" className="btn btn-primary btn-block">
+          Submit
+        </button>
+      </form>
+    </div>
     </>
   );
 };
